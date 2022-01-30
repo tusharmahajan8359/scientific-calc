@@ -1,0 +1,28 @@
+.container{
+    background-color: aquamarine;
+    text-align: center;
+   align-items: center;
+} 
+button{
+   
+    background-color: pink;
+    height: 30px;
+    width: 50px;
+    border-radius: 6px;
+}
+table{
+    margin: auto;
+   
+    width: 267px;
+    border: solid rgb(100, 41, 41);
+    border-radius: 6px;
+}
+.flex{
+    display:flex;
+}
+select{
+    width: 100px;
+    background-color: pink;
+    font-size: 5px;
+  
+}
