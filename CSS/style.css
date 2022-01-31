@@ -3,7 +3,10 @@
     text-align: center;
    align-items: center;
 } 
-button{
+.bodycolor{
+    background-color:aquamarine;
+}
+button,.db{
    
     background-color: pink;
     height: 30px;
@@ -20,9 +23,14 @@ table{
 .flex{
     display:flex;
 }
-select{
-    width: 100px;
+.mybtn{
+    width: 102px;
     background-color: pink;
-    font-size: 5px;
+    font-size: 11px;
   
+}
+.dropdown-menu li{
+    display: inline-block;
+    margin: 3px;
+    text-align: center;
 }

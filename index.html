@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
 
+    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Calculator</title>
 </head>
 
-<body>
+<body class="bodycolor">
 
     <div class="container ">
        <h1>Calculator</h1>
@@ -26,43 +28,69 @@
                <td colspan="5"><input type="text" style="text-align: right;" name="screen" id="screen" placeholder="0" ></td>
            </tr>
            <tr>
-            <td>DEG</td>
-            <td>F-E</td>
+            <td><button onclick="toDegree()">DEG</button></td>
+            <td><button >F-E</button></td>
         </tr>
         <tr>
-            <td><button onclick="mc()" >MC</button></td>
+            <td><button class="mbtn"  onclick="mc()">MC</button></td>
             <td><button onclick="mr()">MR</button></td>
             <td><button onclick="mplus()">M+</button></td>
             <td><button onclick="msub()">M-</button></td>
             <td><button onclick="ms()">MS</button></td>
         </tr>
         <tr>
-            <td colspan="2"><select>
-                <option>Trigonomentry</option>
-                <option>sin</option>
-                <option>cos</option>
-                <option>tan</option>
+            <td colspan="2">
+
+                <div class="dropdown">
+                    <button class="mybtn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Trignomentry
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><button class="db dropdown-item" onclick="sin()">sin</button></li>
+                      <li><button class="db dropdown-item" onclick="cos()">cos</button></li>
+                      <li><button class="db dropdown-item" onclick="tan()">tan</button></li>
+                      <li><button class="db dropdown-item" onclick="cosec()">cosec</button></li>
+                      <li><button class="db dropdown-item" onclick="sec()">sec</button></li>
+                      <li><button class="db dropdown-item" onclick="cot()">cot</button></li>
+                    </ul>
+                  </div>
+
+
+            </td>
+            <td colspan="2">
+                <div class="dropdown">
+                    <button class="mybtn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                     function
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><button class="dropdown-item" onclick="abs()">|x|</button></li>
+                      <li><button class="dropdown-item" onclick="floor()"><span>&#8970</span>x<span>&#8971</span></button></li>
+                      <li><button class="dropdown-item" onclick="ceil()"><span>&#8968</span>x<span>&#8969</span></button></li>
+                      <li><button class="dropdown-item" onclick="cos()">DEG</button></li>
+                      <li><button class="dropdown-item" onclick="toRadians()">RAD</button></li>
+                     
+                    </ul>
+                  </div>
             
-            </select></td>
-            <td colspan="2"><select><option>Function</option></select></td>
+            </td>
         </tr>
            <tr>
-               <td><button >2<sup>nd</sup></button></td>
+               <td><button onclick="second()">2<sup>nd</sup></button></td>
                <td><button class="num"><span>&#960;</span></button></td>
-               <td><button>e</button></td>
-               <td><button onclick="clr()">C</button></td>
-               <td><button onclick="del()">del</button></td>
+               <td><button onclick="e()">e</button></td>
+               <td><button onclick="clr()">AC</button></td>
+               <td><button onclick="del()"><img src="https://img.icons8.com/material-outlined/20/000000/clear-symbol--v1.png" /></button></td>
            </tr>
            <tr>
-            <td><button onclick="sqr()">x<sup>2</sup></button></td>
+            <td><button id="qub" onclick="sqr()">x<sup>2</sup></button></td>
             <td><button onclick="inverse()"><sup>1</sup>/<sub>x</sub></button></td>
-            <td><button>|x|</button></td>
-            <td><button>exp</button></td>
+            <td><button onclick="abs()">|x|</button></td>
+            <td><button onclick="exp()">exp</button></td>
             <td><button onclick="mod()">mod</button></td>
         </tr>
 
         <tr>
-            <td><button onclick="root()"><span>&#8730;x</span></button></td>
+            <td><button id="root" onclick="root()"><span>&#8730;x</span></button></td>
             <td><button class="num">(</button></td>
             <td><button class="num">)</button></td>
             <td><button onclick="factorial(screen.value)">n!</button></td>
@@ -70,7 +98,7 @@
         </tr>
 
         <tr>
-            <td><button onclick="power()">x<sup>y</sup></button></td>
+            <td><button id="yrootx" onclick="power()">x<sup>y</sup></button></td>
             <td><button class="num">7</button></td>
             <td><button class="num">8</button></td>
             <td><button class="num">9</button></td>
@@ -78,7 +106,7 @@
         </tr>
 
         <tr>
-            <td><button onclick="tenpow()">10<sup>x</sup></button></td>
+            <td><button id="sq10" onclick="tenpow()">10<sup>x</sup></button></td>
             <td><button class="num">4</button></td>
             <td><button class="num">5</button></td>
             <td><button class="num">6</button></td>
@@ -86,15 +114,15 @@
         </tr>
 
         <tr>
-            <td><button>log</button></td>
+            <td><button onclick="logg()">log</button></td>
             <td><button class="num">1</button></td>
             <td><button class="num">2</button></td>
             <td><button class="num">3</button></td>
             <td><button class="num">+</button></td>
         </tr>
         <tr>
-            <td><button>ln</button></td>
-            <td><button><sup>+</sup>/<sub>-</sub></button></td>
+            <td><button onclick="ln()">ln</button></td>
+            <td><button onclick="sinchange()"><sup>+</sup>/<sub>-</sub></button></td>
             <td><button class="num">0</button></td>
             <td><button class="num">.</button></td>
             <td><button class="num">=</button></td>
